@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HelBenvenuti nel chatbot Sirio!lo, World!</title>
+<title>Benvenuti Chatbot Sirio</title>
 <style>
   #container {
     position: relative;
@@ -12,12 +12,16 @@
     position: absolute;
     bottom: 10px;
     right: 10px;
+    cursor: pointer; /* Mostra il cursore come un dito quando si passa sopra l'immagine */
   }
 
   #myIframe {
     position: absolute;
-    bottom: 0;
+    bottom: 50px;
     right: 0;
+    width: 600px;
+    height: 400px;
+    border: none;
     display: none; /* Inizialmente nascosto */
   }
 </style>
@@ -25,11 +29,11 @@
 <body>
 
 <div id="container">
-  <h1>Benvenuti nel chatbot Sirio!</h1>
+  <h1>Benvenuti Chatbot Sirio</h1>
 
-  <button id="toggleButton" onclick="toggleIframe()">Mostra/Escondi Iframe</button>
+  <iframe id="myIframe" src='https://app.zipchat.ai/iframe/?widget_token=GgWC3vJrTXDNUAfUulY0' frameborder="0"></iframe>
 
-  <iframe id="myIframe" src='https://app.zipchat.ai/iframe/?widget_token=GgWC3vJrTXDNUAfUulY0'  width="600" height="400" frameborder="0"></iframe>
+  <img id="toggleButton" src="https://cdn.shopify.com/app-store/listing_images/a888a4091469a73df4128d9e1d5dfd79/icon/CKml7ZiqwYQDEAE=.png" onclick="toggleIframe()" alt="Toggle iframe">
 </div>
 
 <script>
