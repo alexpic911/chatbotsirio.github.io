@@ -10,15 +10,19 @@
 
   #toggleButton {
     position: absolute;
+    position: fixed;
     bottom: 10px;
     right: 10px;
-    cursor: pointer; /* Mostra il cursore come un dito quando si passa sopra l'immagine */
-    background-color: transparent; /* Rimuovi il colore di sfondo del pulsante */
-    border: none; /* Rimuovi il bordo del pulsante */
-    padding: 0; /* Rimuovi il padding del pulsante */
-    width: 10px; /* Imposta la larghezza desiderata */
-    height: 10px;
+    width: 100px; /* Imposta la larghezza desiderata */
+    height: 40px; /* Imposta l'altezza desiderata */
+    font-size: 14px; /* Imposta la dimensione del testo */
   }
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 100px; /* Imposta la larghezza desiderata */
+  height: 40px; /* Imposta l'altezza desiderata */
+  font-size: 14px; /* Imposta la dimensione del testo */
 
   #myIframe {
     position: absolute;
@@ -41,7 +45,8 @@
 
 
   <button id="toggleButton" onclick="toggleIframe()">
-    <img src="https://cdn.shopify.com/app-store/listing_images/a888a4091469a73df4128d9e1d5dfd79/icon/CKml7ZiqwYQDEAE=.png"  alt="Toggle iframe">
+    <img src="https://cdn.shopify.com/app-store/listing_images/a888a4091469a73df4128d9e1d5dfd79/icon/CKml7ZiqwYQDEAE=.png"  alt="Toggle iframe",width: 10px,
+  height: 10px>
   </button>
 </div>
 
