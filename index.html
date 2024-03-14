@@ -13,10 +13,12 @@
             height: 40px; /* Imposta l'altezza desiderata */
             cursor: pointer; /* Mostra il cursore come un puntatore quando passi sopra l'immagine */
             z-index: 9999; /* Assicura che l'immagine sia sopra tutti gli altri elementi */
-            background-image: url('percorso_dell_immagine.jpg'); /* Imposta l'immagine di sfondo */
+            background-image: url('zipchat.jpg'); /* Imposta l'immagine di sfondo */
             background-size: cover; /* Adatta l'immagine per coprire completamente il contenitore */
             background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
             background-position: center; /* Centra l'immagine all'interno del contenitore */
+            overflow: hidden; /* Nasconde il contenuto testuale eccedente */
+            text-indent: -9999px; /* Posiziona il testo al di fuori dell'area visibile */
         }
 
         #iframeContainer {
@@ -40,9 +42,9 @@
 </head>
 <body>
 
-    <h1>Benvenuti nel chatbot Sirio!</h1>
-    
-    <div id="mostraIframeImage" src="zipchat.jpg" onclick="toggleIframe()"></div>
+	<h1>Benvenuti nel chatbot Sirio!</h1>
+	
+    <div id="mostraIframeImage" onclick="toggleIframe()">Mostra Iframe</div>
     
     <div id="iframeContainer">
         <iframe id="iframeContent" src="" width="100%" height="100%" frameborder="0"></iframe>
@@ -58,7 +60,7 @@
                 iframeContainer.classList.remove("expanded"); // Rimuovi la classe "expanded"
             } else {
                 var iframeContent = document.getElementById("iframeContent");
-                iframeContent.src = 'https://app.zipchat.ai/iframe/?widget_token=GgWC3vJrTXDNUAfUulY0'; // Inserisci l'URL desiderato
+                iframeContent.src = https://app.zipchat.ai/iframe/?widget_token=GgWC3vJrTXDNUAfUulY0'; // Inserisci l'URL desiderato
                 iframeContainer.classList.add("expanded"); // Aggiungi la classe "expanded"
             }
 
