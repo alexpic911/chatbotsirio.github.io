@@ -13,6 +13,9 @@
     bottom: 10px;
     right: 10px;
     cursor: pointer; /* Mostra il cursore come un dito quando si passa sopra l'immagine */
+    background-color: transparent; /* Rimuovi il colore di sfondo del pulsante */
+    border: none; /* Rimuovi il bordo del pulsante */
+    padding: 0; /* Rimuovi il padding del pulsante */
   }
 
   #myIframe {
@@ -33,7 +36,10 @@
 
   <iframe id="myIframe" src='https://app.zipchat.ai/iframe/?widget_token=GgWC3vJrTXDNUAfUulY0' frameborder="0"></iframe>
 
-  <img id="toggleButton" src="https://cdn.shopify.com/app-store/listing_images/a888a4091469a73df4128d9e1d5dfd79/icon/CKml7ZiqwYQDEAE=.png" onclick="toggleIframe()" alt="Toggle iframe">
+
+  <button id="toggleButton" onclick="toggleIframe()">
+    <img src="https://cdn.shopify.com/app-store/listing_images/a888a4091469a73df4128d9e1d5dfd79/icon/CKml7ZiqwYQDEAE=.png"  alt="Toggle iframe">
+  </button>
 </div>
 
 <script>
