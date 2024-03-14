@@ -5,17 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benvenuto nella chat Sirio</title>
     <style>
-        #iframeContainer {
-            display: none; /* Nascondi l'iframe all'inizio */
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px; /* Imposta la larghezza desiderata */
-            height: 200px; /* Imposta l'altezza desiderata */
-            z-index: 9999; /* Assicura che l'iframe sia sopra tutti gli altri elementi */
-        }
-
         #mostraIframeImage {
             position: fixed;
             bottom: 10px;
@@ -24,6 +13,28 @@
             height: 40px; /* Imposta l'altezza desiderata */
             cursor: pointer; /* Mostra il cursore come un puntatore quando passi sopra l'immagine */
             z-index: 9999; /* Assicura che l'immagine sia sopra tutti gli altri elementi */
+            background-image: url('percorso_dell_immagine.jpg'); /* Imposta l'immagine di sfondo */
+            background-size: cover; /* Adatta l'immagine per coprire completamente il contenitore */
+            background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
+            background-position: center; /* Centra l'immagine all'interno del contenitore */
+        }
+
+        #iframeContainer {
+            display: none; /* Nascondi l'iframe all'inizio */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px; /* Imposta la larghezza iniziale */
+            height: 200px; /* Imposta l'altezza iniziale */
+            z-index: 9998; /* Assicura che l'iframe sia sopra tutti gli altri elementi tranne l'immagine */
+        }
+
+        #iframeContainer.expanded {
+            width: 80%; /* Imposta la larghezza espansa */
+            height: 80%; /* Imposta l'altezza espansa */
+            max-width: 800px; /* Imposta la larghezza massima */
+            max-height: 600px; /* Imposta l'altezza massima */
         }
     </style>
 </head>
@@ -31,11 +42,10 @@
 
     <h1>Benvenuti nel chatbot Sirio!</h1>
     
-    <img id="mostraIframeImage" src="zipchat.jpg" alt="Mostra Iframe" onclick="toggleIframe()">
+    <div id="mostraIframeImage" src="zipchat.jpg" onclick="toggleIframe()"></div>
     
     <div id="iframeContainer">
-        <button onclick="toggleIframe()">Chiudi Iframe</button>
-        <iframe id="iframeContent" src="" width="70%" height="400%" frameborder="0"></iframe>
+        <iframe id="iframeContent" src="" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 
     <script>
@@ -43,13 +53,13 @@
 
         function toggleIframe() {
             var iframeContainer = document.getElementById("iframeContainer");
-            var iframeContent = document.getElementById("iframeContent");
 
             if (isIframeVisible) {
-                iframeContainer.style.display = "none"; // Nascondi l'iframe se è già visibile
+                iframeContainer.classList.remove("expanded"); // Rimuovi la classe "expanded"
             } else {
+                var iframeContent = document.getElementById("iframeContent");
                 iframeContent.src = 'https://app.zipchat.ai/iframe/?widget_token=GgWC3vJrTXDNUAfUulY0'; // Inserisci l'URL desiderato
-                iframeContainer.style.display = "block"; // Mostra l'iframe
+                iframeContainer.classList.add("expanded"); // Aggiungi la classe "expanded"
             }
 
             isIframeVisible = !isIframeVisible;
