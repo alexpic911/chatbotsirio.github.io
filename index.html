@@ -13,6 +13,7 @@
             transform: translate(-50%, -50%);
             width: 300px; /* Imposta la larghezza desiderata */
             height: 200px; /* Imposta l'altezza desiderata */
+            z-index: 9999; /* Assicura che l'iframe sia sopra tutti gli altri elementi */
         }
 
         #mostraIframeImage {
@@ -22,24 +23,34 @@
             width: 100px; /* Imposta la larghezza desiderata */
             height: 40px; /* Imposta l'altezza desiderata */
             cursor: pointer; /* Mostra il cursore come un puntatore quando passi sopra l'immagine */
+            z-index: 9999; /* Assicura che l'immagine sia sopra tutti gli altri elementi */
         }
     </style>
 </head>
 <body>
-    <img id="mostraIframeImage" src="/zipchat.jpg" alt="Mostra Iframe" onclick="mostraIframe()">
+    <img id="mostraIframeImage" src="zipchat.jpg" alt="Mostra Iframe" onclick="toggleIframe()">
     
     <div id="iframeContainer">
+        <button onclick="toggleIframe()">Chiudi Iframe</button>
         <iframe id="iframeContent" src="" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 
     <script>
-        function mostraIframe() {
+        var isIframeVisible = false;
+
+        function toggleIframe() {
             var iframeContainer = document.getElementById("iframeContainer");
             var iframeContent = document.getElementById("iframeContent");
-            iframeContent.src = 'https://app.zipchat.ai/iframe/?widget_token=GgWC3vJrTXDNUAfUulY0'; // Inserisci l'URL desiderato
-            iframeContainer.style.display = "block"; // Mostra l'iframe quando l'immagine viene cliccata
+
+            if (isIframeVisible) {
+                iframeContainer.style.display = "none"; // Nascondi l'iframe se è già visibile
+            } else {
+                iframeContent.src = 'https://app.zipchat.ai/iframe/?widget_token=GgWC3vJrTXDNUAfUulY0'; // Inserisci l'URL desiderato
+                iframeContainer.style.display = "block"; // Mostra l'iframe
+            }
+
+            isIframeVisible = !isIframeVisible;
         }
     </script>
 </body>
-</html>
 </html>
