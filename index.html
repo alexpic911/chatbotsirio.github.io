@@ -25,10 +25,10 @@
             display: none; /* Nascondi l'iframe all'inizio */
             position: fixed;
 			top: 93%;
-            left: 56.5%;
-			right: 80%;
+            left: 71%;
+			right: 200%;
 			bottom: 100%;
-            transform: translate(-50%, -50%);
+            transform: translate(-5%, -50%);
             width: 300px; /* Imposta la larghezza iniziale */
             height: 200px; /* Imposta l'altezza iniziale */
             z-index: 9998; /* Assicura che l'iframe sia sopra tutti gli altri elementi tranne l'immagine */
@@ -36,21 +36,34 @@
 
         #iframeContainer.expanded {
 			display:  block;
+			position: fixed;
             width: 200%; /* Imposta la larghezza espansa */
             height: 200%; /* Imposta l'altezza espansa */
-            max-width: 800px; /* Imposta la larghezza massima */
+            max-width: 200px; /* Imposta la larghezza massima */
             max-height: 800px; /* Imposta l'altezza massima */
         }
+		
+		h1 {
+    text-align: center; /* Centra il testo del titolo */
+    font-family: 'Work Sans', normal; /* Modifica il tipo di carattere */
+    color: #333; /* Cambia il colore del testo */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Aggiungi un'ombra al testo */
+    margin-top: 50px; /* Aggiungi un margine superiore per lo spazio */
+    background-image: url('sirio.png'); /* Aggiungi un'immagine di sfondo */
+    background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
+    background-size: 40px 40px; /* Imposta le dimensioni dell'immagine */
+    background-position: left 35% bottom 45%; /* Posiziona l'immagine accanto al testo */
+}
     </style>
 </head>
 <body>
 
-	<h1>Benvenuti nel chatbot Sirio!</h1>
+	<h1>Benvenuti nel chatbot Naos!</h1>
 	
     <div id="mostraIframeImage" onclick="toggleIframe()">Mostra Iframe</div>
     
     <div id="iframeContainer">
-        <iframe src='https://app.zipchat.ai/iframe/?widget_token=GgWC3vJrTXDNUAfUulY0' width='200%,min-width= 600px' style='height: 50%; min-height: 300px;' frameborder='0'></iframe>
+        <iframe src='https://app.zipchat.ai/iframe/?widget_token=GgWC3vJrTXDNUAfUulY0' width='200%,min-width= 900px' style='height: 50%; min-height: 300px;' frameborder='0'></iframe>
     </div>
 
     <script>
